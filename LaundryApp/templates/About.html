@@ -1,0 +1,365 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Laundry at Ease</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div id="header">
+        <div id="logo">
+            <h1>Laundry at Ease</h1>
+            <p>Your Clothes, Our Care</p>
+        </div>
+    </div>
+
+    <div id="menu">
+        <ul>
+            <li><a href="{% url 'index' %}"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="{% url 'UserLogin' %}"><i class="fas fa-sign-in-alt"></i> Login</a></li>
+            <li><a href="{% url 'Register' %}"><i class="fas fa-user-plus"></i> Register</a></li>
+            <li><a href="{% url 'About' %}"><i class="fas fa-info-circle"></i> About</a></li>
+            <li><a href="{% url 'Contact' %}"><i class="fas fa-envelope"></i> Contact</a></li>
+        </ul>
+    </div>
+
+    <div class="about-container">
+        <div class="about-hero">
+            <div class="about-hero-content">
+                <h2 class="animate-text">About Laundry at Ease</h2>
+                <p class="animate-text-delay">Your trusted partner in laundry care since 2024</p>
+            </div>
+        </div>
+
+        <div class="about-content">
+            <div class="about-section fade-in">
+                <div class="about-icon">
+                    <i class="fas fa-history"></i>
+                </div>
+                <h3>Our Story</h3>
+                <p>Laundry at Ease was founded with a simple mission: to make laundry care effortless and enjoyable. We combine cutting-edge technology with traditional care to deliver exceptional service to our customers.</p>
+            </div>
+
+            <div class="about-section fade-in">
+                <div class="about-icon">
+                    <i class="fas fa-star"></i>
+                </div>
+                <h3>Our Commitment</h3>
+                <p>We are committed to providing the highest quality laundry services while maintaining environmental responsibility. Our eco-friendly practices and attention to detail set us apart.</p>
+            </div>
+
+            <div class="about-section fade-in">
+                <div class="about-icon">
+                    <i class="fas fa-heart"></i>
+                </div>
+                <h3>Why Choose Us?</h3>
+                <ul class="feature-list">
+                    <li><i class="fas fa-check"></i> Professional and experienced staff</li>
+                    <li><i class="fas fa-check"></i> State-of-the-art equipment</li>
+                    <li><i class="fas fa-check"></i> Eco-friendly cleaning solutions</li>
+                    <li><i class="fas fa-check"></i> Quick turnaround time</li>
+                    <li><i class="fas fa-check"></i> Competitive pricing</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="stats-container">
+            <div class="stat-card slide-up">
+                <i class="fas fa-users"></i>
+                <h3>1000+</h3>
+                <p>Happy Customers</p>
+            </div>
+            <div class="stat-card slide-up">
+                <i class="fas fa-tshirt"></i>
+                <h3>5000+</h3>
+                <p>Items Cleaned</p>
+            </div>
+            <div class="stat-card slide-up">
+                <i class="fas fa-star"></i>
+                <h3>4.8</h3>
+                <p>Customer Rating</p>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        :root {
+            --primary-color: #87CEEB;
+            --secondary-color: #4682B4;
+            --accent-color: #B0E0E6;
+            --text-color: #2F4F4F;
+            --white: #FFFFFF;
+            --light-gray: #F5F5F5;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--light-gray);
+            min-height: 100vh;
+        }
+
+        #header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            padding: 2rem;
+            text-align: center;
+            color: var(--white);
+        }
+
+        #logo h1 {
+            font-size: 2.5rem;
+            margin: 0;
+            font-weight: 600;
+        }
+
+        #logo p {
+            margin: 0.5rem 0 0;
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        #menu {
+            background: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        #menu ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        #menu li {
+            padding: 1rem 2rem;
+        }
+
+        #menu a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        #menu a:hover {
+            color: var(--primary-color);
+        }
+
+        .about-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .about-hero {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            padding: 4rem 2rem;
+            text-align: center;
+            color: var(--white);
+            border-radius: 15px;
+            margin-bottom: 3rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('{% static "images/pattern.png" %}') repeat;
+            opacity: 0.1;
+            animation: slide 20s linear infinite;
+        }
+
+        @keyframes slide {
+            from { background-position: 0 0; }
+            to { background-position: 100% 100%; }
+        }
+
+        .about-hero-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            position: relative;
+        }
+
+        .about-hero-content p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            position: relative;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .about-section {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .about-section:hover {
+            transform: translateY(-5px);
+        }
+
+        .about-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+        }
+
+        .about-icon i {
+            font-size: 2rem;
+            color: var(--white);
+        }
+
+        .about-section h3 {
+            color: var(--text-color);
+            margin-bottom: 1rem;
+        }
+
+        .feature-list {
+            list-style: none;
+            padding: 0;
+            text-align: left;
+        }
+
+        .feature-list li {
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .feature-list i {
+            color: var(--primary-color);
+            margin-right: 0.5rem;
+        }
+
+        .stats-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .stat-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .stat-card i {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .stat-card h3 {
+            font-size: 2rem;
+            color: var(--text-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-card p {
+            color: #666;
+        }
+
+        /* Animations */
+        .animate-text {
+            animation: fadeInDown 1s ease;
+        }
+
+        .animate-text-delay {
+            animation: fadeInDown 1s ease 0.3s;
+            animation-fill-mode: both;
+        }
+
+        .fade-in {
+            opacity: 0;
+            animation: fadeIn 1s ease forwards;
+        }
+
+        .slide-up {
+            opacity: 0;
+            animation: slideUp 1s ease forwards;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            #menu ul {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .about-hero {
+                padding: 3rem 1rem;
+            }
+
+            .about-hero-content h2 {
+                font-size: 2rem;
+            }
+
+            .stats-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</body>
+</html> 
