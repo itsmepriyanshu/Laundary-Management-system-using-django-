@@ -1,0 +1,333 @@
+{% load static %}
+<html>
+<head>
+<title>Laundry at Ease</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="{% static 'style.css' %}"/>
+ <script LANGUAGE="Javascript" >
+function validate(){
+	var x=document.forms["f1"]["t12"].value;
+	var y=document.forms["f1"]["t13"].value;
+	if(x == null || x==""){
+		window.alert("Please enter delivery address");
+		document.f1.t12.focus();
+		return false;
+	}
+	if(y == null || y==""){
+		window.alert("Please choose delivery date");
+		document.f1.t13.focus();
+		return false;
+	}
+	return true;
+}
+</script>
+<script language="javascript" type="text/javascript" src="{% static 'datetimepicker.js' %}">
+</script>
+</head>
+<body>
+<div id="wrapper">
+	<div id="header">
+		<div id="logo">
+			<center><font size="4" color="yellow"><font size="4" color="black">Laundry at Ease</font></center></font>
+		</div>
+		<div id="slogan">
+			
+		</div>
+	</div>
+	<div id="menu">
+		<ul><center>
+		<li><a href="{% url 'YoloGraph' %}"><font size="3" color="black">Yolo Performance Graph</font></a></font></li>
+		<li><a href="{% url 'LaundryService' %}"><font size="3" color="black">Laundry Services</font></a></font></li>
+		<li><a href="{% url 'ViewLaundry' %}"><font size="3" color="black">View Past Laundry Order</font></a></font></li>
+	     <li><a href="{% url 'index' %}"><font size="3" color="black">Logout</font></a></font></li>		
+		</center></ul>
+<br class="clearfix" />
+				</div>
+			
+	<div id="splash">
+		<img class="pic" src="{% static 'images/investor.jpg' %}" width="870" height="230" alt="" />
+	</div>	
+			<center>
+<form name="f1" method="post" action={% url 'LaundryServiceAction' %} OnSubmit="return validate()">
+	{% csrf_token %}<br/>
+   <h3><b>Laundry Service Screen</b></h3>
+   
+	<font size="" color="black"><center>{{ data }}</center></font>
+						
+						<table align="center" width="80" >
+			 <tr><td><font size="" color="black">Service&nbsp;Type&nbsp;</b></td><td><select name="t1">
+			 <option value="Only Iron">Only Iron</option>
+			 <option value="Wash & Iron">Wash & Iron</option>
+			 <option value="Washing Only">Washing Only</option>
+			  <option value="Dry Wash">Dry Wash</option>
+			   <option value="Steam Iron">Steam Iron</option>
+			 </select>
+			 </td></tr>
+         
+		  <tr><td><font size="" color="black">Total&nbsp;Shirts&nbsp;</b></td><td><select name="t2">
+			 <option value="0">0</option>
+			 <option value="1">1</option>
+			 <option value="2">2</option>
+			 <option value="3">3</option>
+			 <option value="4">4</option>
+			 <option value="5">5</option>
+			 <option value="6">6</option>
+			 <option value="7">7</option>
+			 <option value="8">8</option>
+			 <option value="9">9</option>
+			  <option value="10">10</option>
+			 <option value="11">11</option>
+			 <option value="12">12</option>
+			 <option value="13">13</option>
+			 <option value="14">14</option>
+			 <option value="15">15</option>
+			 <option value="16">16</option>
+			 <option value="17">17</option>
+			 <option value="18">18</option>
+			 <option value="19">19</option>
+			  <option value="20">20</option>
+			 </select>
+			 </td></tr>
+
+			 <tr><td><font size="" color="black">Total&nbsp;T-Shirts&nbsp;</b></td><td><select name="t3">
+			 <option value="0">0</option>
+			 <option value="1">1</option>
+			 <option value="2">2</option>
+			 <option value="3">3</option>
+			 <option value="4">4</option>
+			 <option value="5">5</option>
+			 <option value="6">6</option>
+			 <option value="7">7</option>
+			 <option value="8">8</option>
+			 <option value="9">9</option>
+			  <option value="10">10</option>
+			 <option value="11">11</option>
+			 <option value="12">12</option>
+			 <option value="13">13</option>
+			 <option value="14">14</option>
+			 <option value="15">15</option>
+			 <option value="16">16</option>
+			 <option value="17">17</option>
+			 <option value="18">18</option>
+			 <option value="19">19</option>
+			  <option value="20">20</option>
+			 </select>
+			 </td></tr>
+		
+		<tr><td><font size="" color="black">Total&nbsp;Shorts&nbsp;</b></td><td><select name="t4">
+			 <option value="0">0</option>
+			 <option value="1">1</option>
+			 <option value="2">2</option>
+			 <option value="3">3</option>
+			 <option value="4">4</option>
+			 <option value="5">5</option>
+			 <option value="6">6</option>
+			 <option value="7">7</option>
+			 <option value="8">8</option>
+			 <option value="9">9</option>
+			  <option value="10">10</option>
+			 <option value="11">11</option>
+			 <option value="12">12</option>
+			 <option value="13">13</option>
+			 <option value="14">14</option>
+			 <option value="15">15</option>
+			 <option value="16">16</option>
+			 <option value="17">17</option>
+			 <option value="18">18</option>
+			 <option value="19">19</option>
+			  <option value="20">20</option>
+			 </select>
+			 </td></tr>
+
+			 <tr><td><font size="" color="black">Total&nbsp;Pants&nbsp;</b></td><td><select name="t5">
+			 <option value="0">0</option>
+			 <option value="1">1</option>
+			 <option value="2">2</option>
+			 <option value="3">3</option>
+			 <option value="4">4</option>
+			 <option value="5">5</option>
+			 <option value="6">6</option>
+			 <option value="7">7</option>
+			 <option value="8">8</option>
+			 <option value="9">9</option>
+			  <option value="10">10</option>
+			 <option value="11">11</option>
+			 <option value="12">12</option>
+			 <option value="13">13</option>
+			 <option value="14">14</option>
+			 <option value="15">15</option>
+			 <option value="16">16</option>
+			 <option value="17">17</option>
+			 <option value="18">18</option>
+			 <option value="19">19</option>
+			  <option value="20">20</option>
+			 </select>
+			 </td></tr>
+
+			 <tr><td><font size="" color="black">Total&nbsp;Towels&nbsp;</b></td><td><select name="t6">
+			 <option value="0">0</option>
+			 <option value="1">1</option>
+			 <option value="2">2</option>
+			 <option value="3">3</option>
+			 <option value="4">4</option>
+			 <option value="5">5</option>
+			 <option value="6">6</option>
+			 <option value="7">7</option>
+			 <option value="8">8</option>
+			 <option value="9">9</option>
+			  <option value="10">10</option>
+			 <option value="11">11</option>
+			 <option value="12">12</option>
+			 <option value="13">13</option>
+			 <option value="14">14</option>
+			 <option value="15">15</option>
+			 <option value="16">16</option>
+			 <option value="17">17</option>
+			 <option value="18">18</option>
+			 <option value="19">19</option>
+			  <option value="20">20</option>
+			 </select>
+			 </td></tr>
+
+			 <tr><td><font size="" color="black">Total&nbsp;Suits&nbsp;</b></td><td><select name="t7">
+			 <option value="0">0</option>
+			 <option value="1">1</option>
+			 <option value="2">2</option>
+			 <option value="3">3</option>
+			 <option value="4">4</option>
+			 <option value="5">5</option>
+			 <option value="6">6</option>
+			 <option value="7">7</option>
+			 <option value="8">8</option>
+			 <option value="9">9</option>
+			  <option value="10">10</option>
+			 <option value="11">11</option>
+			 <option value="12">12</option>
+			 <option value="13">13</option>
+			 <option value="14">14</option>
+			 <option value="15">15</option>
+			 <option value="16">16</option>
+			 <option value="17">17</option>
+			 <option value="18">18</option>
+			 <option value="19">19</option>
+			  <option value="20">20</option>
+			 </select>
+			 </td></tr>
+
+			 <tr><td><font size="" color="black">Total&nbsp;Inner&nbsp;Wears</b></td><td><select name="t8">
+			 <option value="0">0</option>
+			 <option value="1">1</option>
+			 <option value="2">2</option>
+			 <option value="3">3</option>
+			 <option value="4">4</option>
+			 <option value="5">5</option>
+			 <option value="6">6</option>
+			 <option value="7">7</option>
+			 <option value="8">8</option>
+			 <option value="9">9</option>
+			  <option value="10">10</option>
+			 <option value="11">11</option>
+			 <option value="12">12</option>
+			 <option value="13">13</option>
+			 <option value="14">14</option>
+			 <option value="15">15</option>
+			 <option value="16">16</option>
+			 <option value="17">17</option>
+			 <option value="18">18</option>
+			 <option value="19">19</option>
+			  <option value="20">20</option>
+			 </select>
+			 </td></tr>
+
+			 <tr><td><font size="" color="black">Total&nbsp;Kurta&nbsp;</b></td><td><select name="t9">
+			 <option value="0">0</option>
+			 <option value="1">1</option>
+			 <option value="2">2</option>
+			 <option value="3">3</option>
+			 <option value="4">4</option>
+			 <option value="5">5</option>
+			 <option value="6">6</option>
+			 <option value="7">7</option>
+			 <option value="8">8</option>
+			 <option value="9">9</option>
+			  <option value="10">10</option>
+			 <option value="11">11</option>
+			 <option value="12">12</option>
+			 <option value="13">13</option>
+			 <option value="14">14</option>
+			 <option value="15">15</option>
+			 <option value="16">16</option>
+			 <option value="17">17</option>
+			 <option value="18">18</option>
+			 <option value="19">19</option>
+			  <option value="20">20</option>
+			 </select>
+			 </td></tr>
+
+			 <tr><td><font size="" color="black">Total&nbsp;Paijamas&nbsp;</b></td><td><select name="t10">
+			 <option value="0">0</option>
+			 <option value="1">1</option>
+			 <option value="2">2</option>
+			 <option value="3">3</option>
+			 <option value="4">4</option>
+			 <option value="5">5</option>
+			 <option value="6">6</option>
+			 <option value="7">7</option>
+			 <option value="8">8</option>
+			 <option value="9">9</option>
+			  <option value="10">10</option>
+			 <option value="11">11</option>
+			 <option value="12">12</option>
+			 <option value="13">13</option>
+			 <option value="14">14</option>
+			 <option value="15">15</option>
+			 <option value="16">16</option>
+			 <option value="17">17</option>
+			 <option value="18">18</option>
+			 <option value="19">19</option>
+			  <option value="20">20</option>
+			 </select>
+			 </td></tr>
+
+			 <tr><td><font size="" color="black">Total&nbsp;Skirts&nbsp;</b></td><td><select name="t11">
+			 <option value="0">0</option>
+			 <option value="1">1</option>
+			 <option value="2">2</option>
+			 <option value="3">3</option>
+			 <option value="4">4</option>
+			 <option value="5">5</option>
+			 <option value="6">6</option>
+			 <option value="7">7</option>
+			 <option value="8">8</option>
+			 <option value="9">9</option>
+			  <option value="10">10</option>
+			 <option value="11">11</option>
+			 <option value="12">12</option>
+			 <option value="13">13</option>
+			 <option value="14">14</option>
+			 <option value="15">15</option>
+			 <option value="16">16</option>
+			 <option value="17">17</option>
+			 <option value="18">18</option>
+			 <option value="19">19</option>
+			  <option value="20">20</option>
+			 </select>
+			 </td></tr>
+
+			 <tr><td><font size="" color="black">Delivery&nbsp;Address</b></td><td><input type="text" name="t12" style="font-family: Comic Sans MS" size="60"/></td></tr>
+
+			  <tr><Td><font size="" color="black">Delivery&nbsp;Date</td><td>
+<input name="t13" type="Text" id="demo" maxlength="25" size="20" class="c2" ><a href="javascript:NewCal('demo','ddmmyyyy',false,24)"><img src="{% static 'cal.gif' %}" width="16" height="16" border="0" alt="Pick a date"></a>
+	  		<span class="descriptions"></span>
+</td></tr>	
+		 
+			<tr><td></td><td><input type="submit" value="Submit">
+			</td>
+			</table>
+			<br/><br/><br/><br/>
+				</div>	
+					
+				</div>
+				
+	</body>
+</html>
